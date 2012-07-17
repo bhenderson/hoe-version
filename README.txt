@@ -1,26 +1,24 @@
 = hoe-version
 
-* FIX (url)
+* https://github.com/bhenderson/hoe-version
 
 == DESCRIPTION:
 
-FIX (describe your package)
+Hoe plugin to provide rake tasks to bump version.
+
+Supported by http://yp.com
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
+* requires that your code set a VERSION constant.
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
-
-== REQUIREMENTS:
-
-* FIX (list of requirements)
+  rake -T version
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+* gem install hoe-version
 
 == DEVELOPERS:
 
@@ -35,7 +33,7 @@ and generate the RDoc.
 
 (The MIT License)
 
-Copyright (c) 2012 FIX
+Copyright (c) 2012 bhenderson
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
