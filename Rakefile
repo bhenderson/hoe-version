@@ -5,6 +5,7 @@ require 'hoe'
 $:.unshift 'lib'
 
 Hoe.plugin :version
+Hoe.plugin :git
 
 Hoe.spec 'hoe-version' do
   developer('bhenderson', 'henderson.bj@gmail.com')
