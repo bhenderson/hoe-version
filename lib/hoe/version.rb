@@ -1,3 +1,14 @@
+##
+# Version plugin for hoe.
+#
+# === Tasks Provided:
+#
+# version::             Print the current version.
+# version:write::       Writes out new version.
+# version:bump::        Writes out version, bumping to next minor release.
+# version:bump:major::  Writes out version, bumping to next major release.
+# version:bump:patch::  Writes out version, bumping to next patch level release.
+#
 module Hoe::Version
   VERSION = '1.0.0'
 
