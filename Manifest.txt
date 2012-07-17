@@ -3,6 +3,5 @@ History.txt
 Manifest.txt
 README.txt
 Rakefile
-bin/hoe-version
 lib/hoe/version.rb
-test/test_hoe-version.rb
+test/test_hoe_version.rb

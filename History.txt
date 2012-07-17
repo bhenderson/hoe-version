@@ -1,7 +1,11 @@
 === 1.0.0 / 2012-07-17
 
-* 3 unknowns:
+* 5 unknowns:
 
+  * Adds doco.
   * Adds hoe-git plugin.
   * Adds tests and updates readme.
   * Initial commit.
+  * Updates history.
+
+
