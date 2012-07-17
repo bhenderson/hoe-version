@@ -1,6 +1,7 @@
-=== 1.0.0 / 2012-07-16
+=== 1.0.0 / 2012-07-17
 
-* 1 major enhancement
+* 3 unknowns:
 
-  * Birthday!
-
+  * Adds hoe-git plugin.
+  * Adds tests and updates readme.
+  * Initial commit.
