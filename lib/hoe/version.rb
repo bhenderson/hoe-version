@@ -45,6 +45,9 @@ module Hoe::Version
       increment [0, 0, 1]
       task('version:write').invoke
     end
+
+    # hook task
+    task 'prep_release' => 'version:bump'
   end
 
   def increment mask
