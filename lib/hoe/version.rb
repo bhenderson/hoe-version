@@ -48,6 +48,7 @@ module Hoe::Version
   end
 
   def increment mask
+    return if ENV['VERSION']
     segments = version.split('.')[0,3].map!{|p| p.to_i}
 
     mask.each_with_index do |m, i|
