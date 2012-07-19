@@ -8,12 +8,16 @@ class TestHoe; end
 class TestHoe::TestVersion < MiniTest::Unit::TestCase
   include Hoe::Version
 
+  attr_accessor :version
+
   def setup
     @version = '1.1.1'
     @files = []
-    @spec = MiniTest::Mock.new
-    @spec.expect(:files, @files)
+    @spec = Gem::Specification.new
+    @spec.files = @files
+    ENV.delete 'VERSION'
   end
+  def spec() @spec end
 
   def test_increment_minor
     v = increment [0,1,nil]
@@ -30,6 +34,11 @@ class TestHoe::TestVersion < MiniTest::Unit::TestCase
     assert_equal '1.1.2', v
   end
 
+  def test_override_increment
+    ENV['VERSION'] = '4.5.6'
+    refute increment [1,2,3]
+  end
+
   def test_update_version
     expected = ["def nothing() 'No version here' end\n",
                 "class Blah\n  VERSION = '1.1.1'\nend\n"]
@@ -40,6 +49,9 @@ class TestHoe::TestVersion < MiniTest::Unit::TestCase
       assert_equal expected[0], File.read(@files[0])
       expected[1].gsub! '1.1.1', '3.2.1'
       assert_equal expected[1], File.read(@files[1])
+
+      assert_equal '3.2.1', version
+      assert_equal '3.2.1', spec.version.version
     end
   end
 
@@ -62,6 +74,4 @@ class TestHoe::TestVersion < MiniTest::Unit::TestCase
     end
   end
 
-  def spec() @spec end
-  def version() @version end
 end

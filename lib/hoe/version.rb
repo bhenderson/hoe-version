@@ -76,6 +76,8 @@ module Hoe::Version
       if data and data[version_re, 2] &&= vers
         #File.write(file, data)
         File.open(file, 'w'){|f| f.write data}
+        # tell hoe about the new version
+        spec.version = self.version = vers.dup
         return true
       end
     end
