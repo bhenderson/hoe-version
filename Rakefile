@@ -13,4 +13,6 @@ Hoe.spec 'hoe-version' do
   # self.rubyforge_name = 'hoe-versionx' # if different than 'hoe-version'
 end
 
+task 'prep_release' => 'prep_history'
+
 # vim: syntax=ruby
