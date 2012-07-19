@@ -10,7 +10,7 @@
 # version:bump:patch::  Writes out version, bumping to next patch level release.
 #
 module Hoe::Version
-  VERSION = '1.1.0'
+  VERSION = '1.2.0'
 
   def define_version_tasks
     desc 'print current version'
