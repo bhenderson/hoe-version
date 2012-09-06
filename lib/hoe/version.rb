@@ -52,16 +52,9 @@ module Hoe::Version
 
   def increment mask
     return if ENV['VERSION']
-    segments = version.split('.')[0,3].map!{|p| p.to_i}
+    segments = version.split('.')[0,3]
 
-    mask.each_with_index do |m, i|
-      case m
-      when nil
-        segments[i] = 0
-      else
-        segments[i] += m
-      end
-    end
+    segments.map!{|seg| x = mask.shift; x.nil? ? 0 : seg.to_i + x.to_i}
 
     ENV['VERSION'] = segments.join '.'
   end
@@ -73,6 +66,7 @@ module Hoe::Version
     spec.files.each do |file|
       next unless File.exist? file
       data = File.read_utf(file) rescue nil
+
       if data and data[version_re, 2] &&= vers
         #File.write(file, data)
         File.open(file, 'w'){|f| f.write data}
